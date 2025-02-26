@@ -1,0 +1,547 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    /* Regular */
+    line-height: normal;
+    color: #000;
+}
+
+
+/* Основная навигация */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background: white;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 150px;
+    margin-right: 200px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+/* Стили для бургер-меню */
+.burger {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border-radius: 4px;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.burger span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin: 6px auto;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.burger.clicked span:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 10px;
+}
+
+.burger.clicked span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.clicked span:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -10px;
+}
+
+/* Боковое меню */
+.side-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #333;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 5;
+    padding: 60px 20px 20px 20px;
+}
+
+.side-nav.show {
+    transform: translateX(0);
+}
+
+.side-nav ul.main {
+    list-style: none;
+}
+
+.side-nav ul.main li {
+    margin-bottom: 20px;
+}
+
+.side-nav ul.main li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.side-nav ul.main li a:hover {
+    background-color: #555;
+}
+
+/* Оверлей */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 4;
+}
+
+.overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.img.col-3 {
+    padding: 50px;
+    background-image: url("IMG/Pisahov.png");
+    height: 406px;
+    width: 325px;
+    z-index: 100;
+    border-radius: 15px 15px 15px 15px;
+    padding-left: 80px;
+}
+
+.block.col-9 {
+    padding: 50px;
+    background-color: grey;
+    border-radius: 100px 50px 0px 0px;
+    position: absolute;
+    height: 289px;
+    width: 645px;
+    z-index: 0;
+    width: 1000px;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+.row {
+    margin-top: 80px;
+    margin-bottom: 90px;
+    padding-left: 40px;
+    /* Сдвиг вправо */
+}
+
+.block.col-9 {
+    display: flex;
+    /* Включаем flexbox для удобного расположения */
+    flex-direction: column;
+    align-items: flex-start;
+    /* Выравниваем текст по левому краю */
+    justify-content: center;
+    /* Выравниваем текст по вертикали */
+    text-align: left;
+    color: black;
+    /* Цвет текста */
+    font-size: 18px;
+    /* Размер шрифта */
+    font-weight: bold;
+    /* Жирный текст для заголовка */
+    padding: 0px 0px 0px 400px;
+    background-color: lightgray;
+    /* Задаем светло-серый фон */
+}
+
+.biography {
+    margin-bottom: 20px;
+    /* Добавим небольшой отступ снизу */
+    padding: 150px 0;
+    padding-top: 250px;
+}
+
+.line {
+    background-color: black;
+    width: 1px !important;
+    /* Уменьшаем ширину полосы */
+    height: 770px;
+    /* Длина полосы */
+    margin: 0 auto;
+}
+
+
+
+.text-section {
+    padding-left: 20px;
+}
+
+
+.text-section p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.bio_text {
+    font-weight: bold;
+    width: 600px;
+    padding: 20px;
+    text-align: justify;
+}
+
+.works {
+    margin-top: 70px;
+    /* Увеличил отступ сверху для блока */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.works-title {
+    font-size: 36px;
+    font-weight: bold;
+    padding-top: 90px;
+    text-align: center;
+}
+
+
+.works-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.works-list {
+    list-style: disc;
+    padding-left: 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+.works-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.view-all-button {
+    background-color: #d3d3d3;
+    border: none;
+    padding: 15px 30px;
+    /* Увеличил размер кнопки */
+    font-size: 20px;
+    /* Увеличил размер шрифта */
+    border-radius: 12px;
+    /* Сделал кнопке более плавные углы */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-all-button a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.view-all-button:hover {
+    background-color: #bbb;
+}
+
+.journey {
+    text-align: center;
+    padding: 130px;
+    padding-top: 285px;
+    /* Опустит весь блок вниз */
+}
+
+.journey-title {
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    /* Поднимет заголовок выше */
+}
+
+.journey-content {
+    display: flex;
+    align-items: flex-start;
+    /* Смещение текста ниже */
+    justify-content: center;
+    gap: 50px;
+    /* Увеличил отступ между текстом и картинкой */
+}
+
+.journey-img {
+    width: 450px;
+    /* Увеличил размер изображения */
+    height: auto;
+    width: 600px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.journey-text {
+    max-width: 550px;
+    /* Увеличил ширину текста */
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.8;
+    padding-top: 20px;
+    /* Смещение текста вниз */
+}
+
+.video {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.container_video h2 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    /* Увеличил ширину текста */
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+
+.video-wrapper {
+    display: inline-block;
+    background: #808080;
+    /* Серый фон рамки */
+    padding: 30px;
+    border-radius: 20px;
+    /* Закругление рамки */
+    padding-top: 20px;
+}
+
+.video-frame {
+    width: 900px;
+    /* Ширина видео */
+    height: 506px;
+    /* Высота видео */
+    border-radius: 10px;
+    /* Скругление углов у видео */
+}
+
+.gallery__list {
+    list-style-type: none;
+    /* Убирает маркеры */
+    padding: 0;
+    /* Убирает отступы */
+    margin: 0;
+    /* Убирает поля */
+}
+
+.gallery__text1 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.gallery__text {
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.gallery__item1 {
+    width: 450px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 0px;
+    float: left;
+    margin-top: 70px;
+}
+
+.gallery__item2 {
+    width: 450px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 30px;
+    float: right;
+    margin-top: 70px;
+}
+
+.gallery {
+    padding-top: 130px;
+}
+
+/* Стили для футера */
+footer {
+    background-color: #333;
+    /* Цвет фона */
+    color: white;
+    /* Цвет текста */
+    text-align: center;
+    /* Выравнивание текста */
+    padding: 20px;
+    /* Отступы */
+    margin-top: auto;
+    /* Прижимает футер вниз */
+    width: 100%;
+    /* Растягивает на всю ширину */
+}
+
+/* Чтобы футер всегда был внизу, даже если мало контента */
+html,
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    /* Занимает доступное пространство, чтобы футер оставался внизу */
+}
+
+/* Адаптация для телефонов */
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+        /* Уменьшаем размер шрифта для мобильных устройств */
+    }
+
+    .navbar {
+        padding: 10px;
+        /* Уменьшаем отступы в навигации */
+    }
+
+    .logo {
+        font-size: 18px;
+        /* Уменьшаем размер логотипа */
+        margin-left: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        /* Скрываем стандартное меню на мобильных устройствах */
+    }
+
+    .burger {
+        display: block;
+        /* Показываем бургер-меню */
+    }
+
+    .container {
+        padding: 10px;
+        /* Уменьшаем отступы в контейнере */
+    }
+
+    .block.col-9 {
+        padding: 10px;
+        /* Уменьшаем отступы в блоке */
+        width: 100%;
+        /* Делаем блок на всю ширину */
+        height: auto;
+        /* Автоматическая высота */
+        font-size: 16px;
+        /* Уменьшаем размер шрифта */
+    }
+
+    .img.col-3 {
+        width: 100%;
+        /* Делаем изображение на всю ширину */
+        height: auto;
+        /* Автоматическая высота */
+        background-size: cover;
+        /* Масштабируем изображение */
+        padding-left: 0;
+        /* Убираем отступы */
+    }
+
+    .journey-content {
+        flex-direction: column;
+        /* Делаем вертикальное расположение */
+        text-align: center;
+        /* Выравниваем текст по центру */
+    }
+
+    .journey-img {
+        width: 100%;
+        /* Делаем изображение на всю ширину */
+        margin-top: 10px;
+        /* Уменьшаем отступ сверху */
+    }
+
+    .journey-text {
+        text-align: center;
+        /* Выравниваем текст по центру */
+        padding-top: 10px;
+        /* Уменьшаем отступ сверху */
+    }
+
+    .video-frame {
+        width: 100%;
+        /* Делаем видео на всю ширину */
+        height: auto;
+        /* Автоматическая высота */
+    }
+
+    .gallery__item1,
+    .gallery__item2 {
+        width: 100%;
+        /* Делаем изображения на всю ширину */
+        float: none;
+        /* Убираем обтекание */
+        margin-top: 10px;
+        /* Уменьшаем отступ сверху */
+    }
+
+    .view-all-button {
+        padding: 10px;
+        /* Уменьшаем отступы в кнопке */
+        font-size: 16px;
+        /* Уменьшаем размер шрифта */
+    }
+
+    .works-title,
+    .journey-title,
+    .gallery__text {
+        font-size: 24px;
+        /* Уменьшаем размер заголовков */
+    }
+
+    .works-list {
+        font-size: 16px;
+        /* Уменьшаем размер шрифта в списке */
+    }
+}
